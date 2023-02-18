@@ -15,7 +15,7 @@ RUN yarn
 COPY . .
 
 # 暴露服务运行的端口
-EXPOSE 4000
+EXPOSE 3000
 
 # 启动 Node.js 服务
 CMD [ "yarn", "start" ]
