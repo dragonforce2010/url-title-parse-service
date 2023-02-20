@@ -43,6 +43,8 @@ export default async function handler(
   const htmlText = await resp.text()
   const $ = cheerio.load(htmlText);
   const websiteTitle = $('head > title').text();
+  console.log('successfully parsed title for url, title = ', websiteTitle)
+
   res.status(200).send({
     websiteTitle: websiteTitle,
   });
