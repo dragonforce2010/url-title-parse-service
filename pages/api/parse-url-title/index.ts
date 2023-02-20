@@ -33,8 +33,9 @@ export default async function handler(
 ) {
   await runMiddleware(req, res, cors)
   const url = req.query.url as string;
+  console.log('received a request with url:', url)
   if (!url) {
-    res.status(400).send({ error: 'bad request! url is not ' });
+    res.status(400).send({ error: `bad request! url is not valid, url = ${url}` });
     return;
   }
 
